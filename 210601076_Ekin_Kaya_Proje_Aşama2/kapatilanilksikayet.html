@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şikayetçiyim!</title>
+    <style>
+        @import url("css/all.css");
+    </style>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom/extra.css">
+</head>
+
+<body id="page-body">
+    <!-- navigation start-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <div class="container">
+            <a href="#page-body" class="navbar-brand text-uppercase">Şikayetçiyim</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#myNavbar"
+                aria-controls="myNavbar" aria-label="menüyü açma kapama butonu" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="myNavbar" aria-labelledby="myLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="myLabel">Menü</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Kapat">
+                    </button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto text-uppercase py-lg-2 te">
+                        <li class="nav-item"><a href="anasayfa.html" class="nav-link btn-close-canvas">Anasayfa</a></li>
+                        <li class="nav-item"><a href="#profil" class="nav-link btn-close-canvas">Profil</a></li>
+                        <li class="nav-item"><a href="#sikayetarama" class="nav-link btn-close-canvas">Şikayet Arama</a></li>
+                        <li class="nav-item"><a href="#sikayetgoruntule" class="nav-link btn-close-canvas">Şikayet Listesi</a></li>
+                        <li class="nav-item"><a href="#sikayetcevapla" class="nav-link btn-close-canvas">Şikayet Cevaplama</a></li>
+                        <li class="nav-item"><a href="#sikayetkapatma" class="nav-link btn-close-canvas">Şikayet Kapatma</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- navigation end-->
+
+    <!-- services start-->
+    <section id="profil" class="mySection">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="s-heading text-uppercase fw-bold">Tekrar Hoş Geldiniz!</h2>
+                <h3 class="s-subheading text-muted">Bu yıl 35 şikayetinizi birlikte çözüme kavuşturduk. Firmalar listesinde 1. sıraya yükseldiniz.</h3>
+            </div>
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-body" id="body">
+
+                        Mail Adresi: beyzayilmaz@gmail.com<br>
+                        Şifre:***** <br>
+        
+                       <br>
+        
+                        Kullanıcı <br> 
+                         Adı: Beyza <br>
+                         Soyadı: Yılmaz <br>
+                         Doğum tarihi: 28/06/1999 <br>
+                         <br>
+                         Telefon: 05422232 <br>
+                         Adres: Yalı mahallesi, 1234.Sk. No:3 Daire:2 Karşıyaka/İzmir
+                         
+                    </div>
+                    <div class="panel-footer"> 
+                        <br>
+                        <a href="#" class="btn btn-danger btn-sm" id ="Guncelle">Güncelle</a> 
+                        <a href="#" class="btn btn-default btn-sm">İptal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- services end-->
+
+    <!--portfolio start-->
+    <section id="sikayetarama" class="mySection bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="s-heading text-uppercase fw-bold">Şikayet Listesinde Arama</h2>
+                <h3 class="s-subheading text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
+            </div>
+            <div class="row gy-4">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <input id="myInput" class="form-control" type="text" placeholder="Ara..">
+        </div>
+        <div class="row">
+            <ul id="myList" class="list-group">
+                <li class="list-group-item list-group-item-info">Esma Sütçüoğlu-12.11.2022 <br> Süt bozuktu..</li>
+                <li class="list-group-item list-group-item-info">Ece Seçkiner-09.12.2022<br>Tatlıdan böcek çıktı..</li>
+                <li class="list-group-item list-group-item-info">Ela Seçil-10.12.2022<br>Paketleme çok kötü..</li>
+                <li class="list-group-item list-group-item-info">Ahmet Yılmaz-13.12.2022<br>Garsonlar yardımcı olmuyor, çok yoğun..</li>
+                <li class="list-group-item list-group-item-info">Yusuf Tuğrul-15.12.2022<br>Tatlılar bozulmuştu...</li>
+            </ul>
+        </div>
+    </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <script>$(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myList li").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+      });</script>
+     
+
+            </div>
+        </div>
+    </section>
+    <!--portfolio end-->
+
+    <!--about start-->
+    <section id="sikayetgoruntule" class="mySection">
+        <div class="container">
+            <div class="text-center mb-5 pb-3">
+                <h2 class="s-heading text-uppercase fw-bold">Şikayetlerim</h2>
+                <h3 class="s-subheading text-muted">Geçmiş şikayetlerinizi görüntülemek için şikayetinizin üzerine tıklayınız.</h3>
+            </div>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Süt bozuk olmasına rağmen lattemi değiştirmediler!</h4>
+                <p class="list-group-item-text">12.12.2022 tarihinde Cactus Kitap Cafe....</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Aras kargo 1 aydır siparişimi getirmiyor!</h4>
+                <p class="list-group-item-text">Yaklaşık 1 ay önce Menemen Aras Kargo şubesine ulaşan...</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Paketleme çook kötü!</h4>
+                <p class="list-group-item-text">Luna kahve dükkanından kahve sipariş etmiştim. Paketleme...</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">TrendyolMilla ürün defolu geldi</h4>
+                <p class="list-group-item-text">Milladan aldığım tüm ürünlerde mutlaka bir defo çıkıyor..</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Mudo ürün geri almıyor</h4>
+                <p class="list-group-item-text">Hepsiburada üzerinden alışveriş yaptım. Fakat mumluk kırık geldi..</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Paketleme çook kötü!</h4>
+                <p class="list-group-item-text">Starbucks Alsancak şubesinden YemekSepeti'ni kullanarak kahve sipariş etmiştim. Paketleme...</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Pizza Hut ek ücret ödediğim ürünleri eklememişler!</h4>
+                <p class="list-group-item-text">Çiğli Pizza Hut ek ücret ödediğim ürünleri koymamasına rağmen..</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Usta Dönercim'den para ödememe rağmen eksik ürün!</h4>
+                <p class="list-group-item-text">İlaç içmek için ekstra su sipariş etmeme rağmen su gelmedi.</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Tatlıları çook kötü, bayat ürün satıyorlar!</h4>
+                <p class="list-group-item-text">Luna kahve dükkanı bayat ürün satıyor, yaş pasta sipariş..</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Paketleme çook kötü!</h4>
+                <p class="list-group-item-text">Cactus kahve dükkanından kahve sipariş etmiştim. Paketleme...</p>
+            </a>
+
+        </div>
+    </section>
+    <!--about end-->
+
+    <!--team start-->
+    <section id="sikayetcevapla" class="mySection bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="s-heading text-uppercase fw-bold">Şikayetlerinizi Cevaplayın</h2>
+                <h3 class="s-subheading text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Şikayeti Cevapla<i>-Şikayetinizi Kaydet butonuna tıklayarak kaydetmeyi unutmayınız.</i></strong>
+                    <br><br>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" style="width:20%">
+                          Şikayet alındı
+                        </div>
+                       
+                      </div>
+                </div>
+                
+                <div class="panel-body" id="body">
+                    Lorem ipsum dolor sit ametnim ...<br>
+                    Lorem ipsum dolor sit ametnim ...<br>
+                    Lorem ipsum dolor sit ametnim ...<br>
+                    Lorem ipsum dolor sit ametnim ...<br>
+                    <div class="panel-footer">
+                        <br>
+                        <a href="firmasayfalari.html#sikayetgoruntule" class="btn btn-danger btn-sm" id ="Kaydet">Kaydet</a> 
+                        <a href="#" class="btn btn-default btn-sm">İptal</a>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>Şikayeti Cevapla<i>-Şikayetinizi Kaydet butonuna tıklayarak kaydetmeyi unutmayınız.</i></strong>
+                        <br><br>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width:20%">
+                              
+                            </div>
+                            <div class="progress-bar bg-warning" style="width:30%">
+                              Şikayet Cevaplandı
+                            </div>
+                           
+                          </div>
+                    </div>
+                    
+                    <div class="panel-body" id="body">
+                        !!2.şikayet!!Lorem ipsum dolor sit ametnim ...<br>
+                        Lorem ipsum dolor sit ametnim ...<br>
+                        Lorem ipsum dolor sit ametnim ...<br>
+                        Lorem ipsum dolor sit ametnim ...<br>
+                    </div>
+                <div class="panel-footer">
+                    <br>
+                    <a href="#" class="btn btn-danger btn-sm" id ="Kaydet">Kaydet</a> 
+                    <a href="#" class="btn btn-default btn-sm">İptal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--team end-->
+
+    <!-- contact start-->
+    <section id="sikayetkapatma" class="mySection bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="s-heading text-uppercase fw-bold">Şikayet Kapatma</h2>
+                <h3 class="s-subheading text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita,
+                    provident.</h3>
+            </div>
+            
+    </div>
+    <div class="container" style="background-color: #f5f5f5;
+    border-color: #ddd; color:#333">
+        <div class="panel panel-default">
+            <div class="panel-body" id="body">
+                <h4 class="list-group-item-heading">Aras kargo 1 aydır siparişimi getirmiyor!</h4>
+                <p class="list-group-item-text">Yaklaşık 1 ay önce Menemen Aras Kargo şubesine ulaşan...</p>
+            </div>
+            <div class="panel-footer mb-3 p-2">
+                <a href="#" class="btn btn-danger btn-sm" id ="Kaydet">Şikayeti Kapat</a> 
+
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: #f5f5f5;
+    border-color: #ddd; color:#333">
+        <div class="panel panel-default">
+            <div class="panel-body" id="body">
+                <h4 class="list-group-item-heading">Paketleme çook kötü!</h4>
+                <p class="list-group-item-text">Luna kahve dükkanından kahve sipariş etmiştim. Paketleme...</p>
+            </div>
+            <div class="panel-footer mb-3 p-2">
+                <a href="#" class="btn btn-danger btn-sm" id ="Sil">Şikayeti Kapat</a> 
+
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: #f5f5f5;
+    border-color: #ddd; color:#333">
+        <div class="panel panel-default">
+            <div class="panel-body" id="body">
+                <h4 class="list-group-item-heading">TrendyolMilla ürün defolu geldi</h4>
+                <p class="list-group-item-text">Milladan aldığım tüm ürünlerde mutlaka bir defo çıkıyor..</p>
+            </div>
+            <div class="panel-footer mb-3 p-2">
+                <a href="#" class="btn btn-danger btn-sm" id ="Sil">Şikayeti Kapat</a> 
+
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: #f5f5f5;
+    border-color: #ddd; color:#333">
+        <div class="panel panel-default">
+          
+            <div class="panel-body" id="body">
+                <h4 class="list-group-item-heading">Mudo ürün geri almıyor</h4>
+                <p class="list-group-item-text">Hepsiburada üzerinden alışveriş yaptım. Fakat mumluk kırık geldi..</p>
+            </div>
+            <div class="panel-footer mb-3 p-2">
+                <a href="#" class="btn btn-danger btn-sm" id ="Sil">Şikayeti Kapat</a> 
+                
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: #f5f5f5;
+    border-color: #ddd; color:#333">
+        <div class="panel panel-default">
+            <div class="panel-body" id="body">
+                <h4 class="list-group-item-heading">Paketleme çook kötü!</h4>
+                <p class="list-group-item-text">Starbucks Alsancak şubesinden YemekSepeti'ni kullanarak kahve sipariş etmiştim. Paketleme...</p>
+            </div>
+            <div class="panel-footer mb-3 p-2">
+                <a href="#" class="btn btn-danger btn-sm" id ="Sil">Şikayeti Kapat</a> 
+         
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: #f5f5f5;
+    border-color: #ddd; color:#333">
+        <div class="panel panel-default">
+          
+            <div class="panel-body" id="body">
+                <h4 class="list-group-item-heading">Pizza Hut ek ücret ödediğim ürünleri eklememişler!</h4>
+                <p class="list-group-item-text">Çiğli Pizza Hut ek ücret ödediğim ürünleri koymamasına rağmen..</p>
+            </div>
+            <div class="panel-footer mb-3 p-2">
+                <a href="#" class="btn btn-danger btn-sm" id ="Kaydet">Şikayeti Kapat</a> 
+                
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: #f5f5f5;
+    border-color: #ddd; color:#333">
+        <div class="panel panel-default">
+            
+            <div class="panel-body" id="body">
+                <h4 class="list-group-item-heading">Usta Dönercim'den para ödememe rağmen eksik ürün!</h4>
+                <p class="list-group-item-text">İlaç içmek için ekstra su sipariş etmeme rağmen su gelmedi.</p>
+            </div>
+            <div class="panel-footer mb-3 p-2">
+                <a href="#" class="btn btn-danger btn-sm" id ="Kaydet">Şikayeti Kapat</a> 
+              
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: #f5f5f5;
+    border-color: #ddd; color:#333">
+        <div class="panel panel-default">
+           
+            <div class="panel-body" id="body">
+                <h4 class="list-group-item-heading">Tatlıları çook kötü, bayat ürün satıyorlar!</h4>
+                <p class="list-group-item-text">Luna kahve dükkanı bayat ürün satıyor, yaş pasta sipariş..</p>
+            </div>
+            <div class="panel-footer mb-3 p-2">
+                <a href="#" class="btn btn-danger btn-sm" id ="Kaydet">Şikayeti Kapat</a> 
+                
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color: #f5f5f5;
+    border-color: #ddd; color:#333">
+        <div class="panel panel-default">
+           
+            <div class="panel-body" id="body">
+                <h4 class="list-group-item-heading">Paketleme çook kötü!</h4>
+                <p class="list-group-item-text">Cactus kahve dükkanından kahve sipariş etmiştim. Paketleme...</p>
+            </div>
+            <div class="panel-footer mb-3 p-2">
+                <a href="#" class="btn btn-danger btn-sm" id ="Kaydet">Şikayeti Kapat</a> 
+                
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+    <!-- contact end-->
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/custom/extra.js"></script>
+</body>
+
+</html>
